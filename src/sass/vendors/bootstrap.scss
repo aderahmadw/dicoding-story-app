@@ -1,14 +1,8 @@
-// Override Bootstrap's Sass default variables
-//
-// Nearly all variables in Bootstrap are written with the `!default` flag.
-// This allows you to override the default values of those variables before
-// you import Bootstrap's source Sass files.
-//
-// Overriding the default variable values is the best way to customize your
-// CSS without writing _new_ styles. For example, you can either change
-// `$body-color` or write more CSS that override's Bootstrap's CSS like so:
-// `body { color: red; }`.
+// Using built-in modules
+@use "sass:map";
 
+// custom modules
+@use "../vendors-extensions/bootstrap/variables/colors.scss" as color;
 //
 // Bring in Bootstrap
 //
@@ -26,6 +20,10 @@
 // Include functions first
 @import "~bootstrap/scss/functions";
 
+// Variable overrides
+$body-bg: #000;
+$body-color: #fff;
+
 // Required
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/maps";
@@ -34,6 +32,9 @@
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
 
+$theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
+
+// components
 @import "~bootstrap/scss/type";
 @import "~bootstrap/scss/containers";
 @import "~bootstrap/scss/grid";
