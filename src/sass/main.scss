@@ -1,1 +1,5 @@
 @use "./vendors/" as vendor;
+
+// Customize some defaults
+$primary: #000;
+$secondary: #329c40;
