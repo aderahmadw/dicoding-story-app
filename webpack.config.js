@@ -1,4 +1,5 @@
 const path = require("path");
+const fs = require("fs");
 const autoprefixer = require("autoprefixer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -7,12 +8,6 @@ module.exports = {
   entry: {
     app: path.resolve(__dirname, "src/js/index.js"),
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: path.resolve(__dirname, "src/views/index.html"),
-    }),
-  ],
   module: {
     rules: [
       {
@@ -33,18 +28,35 @@ module.exports = {
             // Loads a SASS/SCSS file and compiles it to CSS
             loader: "sass-loader",
           },
-          {
-            test: /\.m?js$/,
-            exclude: /(node_modules)/,
-            use: {
-              loader: "babel-loader",
-              options: {
-                presets: ["@babel/preset-env"],
-              },
-            },
-          },
         ],
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: path.resolve(__dirname, "src/views/index.html"),
+      templateParameters: {
+        title: "Welcome to Story App",
+        header: fs.readFileSync(
+          path.resolve(__dirname, "src/views/templates/header.html"),
+          "utf8"
+        ),
+        footer: fs.readFileSync(
+          path.resolve(__dirname, "src/views/templates/footer.html"),
+          "utf8"
+        ),
+      },
+    }),
+  ],
 };
