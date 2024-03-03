@@ -11,6 +11,11 @@ import * as bootstrap from "bootstrap";
 
 // const detectRoute = () => routes[window.location.pathname];
 
+// Function to update the page title
+const updatePageTitle = (title) => {
+  document.title = title;
+};
+
 const initPages = () => {
   const header = document.querySelector("header");
   const main = document.querySelector("main");
@@ -25,6 +30,10 @@ const initPages = () => {
 
 window.addEventListener("DOMContentLoaded", async () => {
   initPages();
+
+  // Update page title
+  updatePageTitle("Welcome to Story App");
+
   //   const route = detectRoute();
   //   route.init();
 });

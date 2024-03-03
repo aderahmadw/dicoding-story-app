@@ -4,6 +4,19 @@ const autoprefixer = require("autoprefixer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const htmlWebpackPluginConfig = {
+  templateParameters: {
+    header: fs.readFileSync(
+      path.resolve(__dirname, "src/views/templates/header.html"),
+      "utf8"
+    ),
+    footer: fs.readFileSync(
+      path.resolve(__dirname, "src/views/templates/footer.html"),
+      "utf8"
+    ),
+  },
+};
+
 module.exports = {
   entry: {
     app: path.resolve(__dirname, "src/js/index.js"),
@@ -46,17 +59,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: path.resolve(__dirname, "src/views/index.html"),
-      templateParameters: {
-        title: "Welcome to Story App",
-        header: fs.readFileSync(
-          path.resolve(__dirname, "src/views/templates/header.html"),
-          "utf8"
-        ),
-        footer: fs.readFileSync(
-          path.resolve(__dirname, "src/views/templates/footer.html"),
-          "utf8"
-        ),
-      },
+      ...htmlWebpackPluginConfig,
     }),
   ],
 };

@@ -35,7 +35,9 @@ $theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
 //
 // Navbar Color
 //
-$nav-pills-link-active-bg: color.$primary;
+$nav-pills-link-active-bg: rgba(color.$primary, 0.8);
+$nav-link-color: rgba(200, 200, 200, 1);
+$nav-link-hover-color: rgba(color.$primary, 1);
 
 @import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
