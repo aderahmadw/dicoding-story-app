@@ -26,13 +26,22 @@ $body-color: #fff;
 
 // Required
 @import "~bootstrap/scss/variables";
+
+//
+// Overrides Color
+//
+$theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
+
+//
+// Navbar Color
+//
+$nav-pills-link-active-bg: color.$primary;
+
 @import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
-
-$theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
 
 // components
 @import "~bootstrap/scss/type";
