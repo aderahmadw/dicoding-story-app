@@ -39,6 +39,12 @@ $nav-pills-link-active-bg: rgba(color.$primary, 0.8);
 $nav-link-color: rgba(200, 200, 200, 1);
 $nav-link-hover-color: rgba(color.$primary, 1);
 
+//
+// Border
+//
+
+$border-radius-pill: 5rem;
+
 @import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";

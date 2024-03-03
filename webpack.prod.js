@@ -15,6 +15,20 @@ module.exports = merge(config, {
     filename: "main.[contenthash].js",
     clean: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "main.[contenthash].css",

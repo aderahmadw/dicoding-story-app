@@ -2,19 +2,8 @@
 import "../sass/main.scss";
 
 // Import javascript file as needed
-import Dashboard from "./pages/dashboard";
 import * as bootstrap from "bootstrap";
-
-// const routes = {
-//   '/': Dashboard
-// };
-
-// const detectRoute = () => routes[window.location.pathname];
-
-// Function to update the page title
-const updatePageTitle = (title) => {
-  document.title = title;
-};
+import { routes, detectRoute } from "./routes/router";
 
 const initPages = () => {
   const header = document.querySelector("header");
@@ -31,9 +20,6 @@ const initPages = () => {
 window.addEventListener("DOMContentLoaded", async () => {
   initPages();
 
-  // Update page title
-  updatePageTitle("Welcome to Story App");
-
-  //   const route = detectRoute();
-  //   route.init();
+  const route = detectRoute();
+  route.init();
 });
