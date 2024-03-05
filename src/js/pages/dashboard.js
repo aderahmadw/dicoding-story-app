@@ -1,6 +1,8 @@
+import { updatePageTitle } from "../helpers/pageTitleHelper";
+
 const Dashboard = {
   async init() {
-    console.log("Hi");
+    updatePageTitle("Dashboard | Storyy"), console.log(document.title);
   },
 };
 

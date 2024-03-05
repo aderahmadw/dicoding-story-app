@@ -1,5 +1,5 @@
-import Welcome from "../pages/welcome";
-import Dashboard from "../pages/dashboard";
+import Welcome from "../pages/welcome.js";
+import Dashboard from "../pages/dashboard.js";
 
 const routes = {
   "/": Welcome,

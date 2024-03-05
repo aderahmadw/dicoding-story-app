@@ -12,7 +12,7 @@ module.exports = merge(config, {
   mode: "production",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "main.[contenthash].js",
+    filename: "[name].[contenthash].js",
     clean: true,
   },
   module: {
@@ -31,7 +31,7 @@ module.exports = merge(config, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "main.[contenthash].css",
+      filename: "[name].[contenthash].css",
     }),
     new PurgeCSSPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),

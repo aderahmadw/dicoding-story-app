@@ -2,7 +2,8 @@ const path = require("path");
 const fs = require("fs");
 const autoprefixer = require("autoprefixer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const htmlWebpackPluginConfig = {
   templateParameters: {
@@ -19,17 +20,17 @@ const htmlWebpackPluginConfig = {
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, "src/js/index.js"),
+    app: "./src/js/index.js",
+    // dashboard: path.resolve(__dirname, "src/js/pages/dashboard.js"),
   },
   module: {
     rules: [
       {
         test: /\.(s[ac]ss)$/i,
         use: [
-          MiniCssExtractPlugin.loader,
+          "style-loader",
           "css-loader",
           {
-            // Loader for webpack to process CSS with PostCSS
             loader: "postcss-loader",
             options: {
               postcssOptions: {
@@ -37,10 +38,7 @@ module.exports = {
               },
             },
           },
-          {
-            // Loads a SASS/SCSS file and compiles it to CSS
-            loader: "sass-loader",
-          },
+          "sass-loader",
         ],
       },
     ],
@@ -48,8 +46,24 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: path.resolve(__dirname, "src/views/index.html"),
+      template: path.resolve(__dirname, "./src/views/index.html"),
       ...htmlWebpackPluginConfig,
+      chunks: ["app"],
     }),
+    new HtmlWebpackPlugin({
+      filename: "dashboard.html",
+      template: path.resolve(__dirname, "./src/views/pages/dashboard.html"),
+      ...htmlWebpackPluginConfig,
+      chunks: ["app"],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/public/"),
+          to: path.resolve(__dirname, "dist/"),
+        },
+      ],
+    }),
+    new CleanWebpackPlugin(),
   ],
 };

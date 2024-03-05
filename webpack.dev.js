@@ -1,30 +1,26 @@
 const path = require("path");
-const glob = require("glob");
 const config = require("./webpack.config.js");
 const { merge } = require("webpack-merge");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
-
-const PATHS = {
-  src: path.join(__dirname, "src"),
-};
 
 module.exports = merge(config, {
   mode: "development",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "main.js",
+    filename: "[name].bundle.js",
     clean: true,
   },
-  plugins: [
-    new MiniCssExtractPlugin(),
-    new PurgeCSSPlugin({
-      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-    }),
-  ],
   devServer: {
     static: {
-      directory: path.join(__dirname, "src"),
+      directory: path.join(__dirname, "dist"),
+    },
+    liveReload: true,
+    port: 9000,
+    devMiddleware: {
+      index: true,
+      mimeTypes: { phtml: "text/html" },
+      publicPath: "/publicPathForDevServe",
+      serverSideRender: true,
+      writeToDisk: true,
     },
     client: {
       overlay: {
@@ -32,7 +28,12 @@ module.exports = merge(config, {
         warnings: false,
       },
     },
-    liveReload: true,
-    port: 9000,
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/$/, to: "/index.html" },
+        { from: /^\/dashboard/, to: "/dashboard.html" },
+      ],
+    },
   },
+  plugins: [],
 });
