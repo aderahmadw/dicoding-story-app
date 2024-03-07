@@ -14,7 +14,7 @@ self["webpackHotUpdatestory_app"]("app",{
   \*******************************************************************************************************************************************************************************/
 /***/ (() => {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\\nSassError: $color: linear-gradient(167deg, rgb(135, 117, 222) 0%, rgb(80, 67, 142) 49%) is not a color.\\n   ╷\\n38 │ $nav-pills-link-active-bg: rgba(color.$primary, 0.8);\\r\\n   │                            ^^^^^^^^^^^^^^^^^^^^^^^^^\\n   ╵\\n  src\\\\sass\\\\vendors\\\\bootstrap.scss 38:28  @forward\\n  src\\\\sass\\\\vendors\\\\index.scss 1:1        @use\\n  src\\\\sass\\\\main.scss 1:1                 root stylesheet\");\n\n//# sourceURL=webpack://story-app/./src/sass/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet%5B1%5D.rules%5B0%5D.use%5B2%5D!./node_modules/sass-loader/dist/cjs.js");
+eval("throw new Error(\"Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\\nSassError: compound selectors may no longer be extended.\\nConsider `@extend mixin, .gradient-overlay` instead.\\nSee https://sass-lang.com/d/extend-compound for details.\\n\\n   ╷\\n36 │   @extend mixin.gradient-overlay;\\r\\n   │           ^^^^^^^^^^^^^^^^^^^^^^\\n   ╵\\n  src\\\\sass\\\\main.scss 36:11  root stylesheet\");\n\n//# sourceURL=webpack://story-app/./src/sass/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet%5B1%5D.rules%5B0%5D.use%5B2%5D!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ })
 
@@ -22,7 +22,7 @@ eval("throw new Error(\"Module build failed (from ./node_modules/sass-loader/dis
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("fa428aeb138ebb510faf")
+/******/ 	__webpack_require__.h = () => ("90774c2f88b22c9c23b5")
 /******/ })();
 /******/ 
 /******/ /* webpack/runtime/jsonp chunk loading */

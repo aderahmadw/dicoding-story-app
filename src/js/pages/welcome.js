@@ -1,22 +1,15 @@
 // Import any necessary dependencies
 import { updatePageTitle } from "../helpers/pageTitleHelper";
+import { fetchData } from "../services/dataService";
 
 const Welcome = {
   async init() {
     updatePageTitle("Welcome to Story App");
     console.log(document.title);
-    await this.initData();
-  },
-
-  async initData() {
     try {
-      const response = await fetch(
+      const data = await fetchData(
         "https://raw.githubusercontent.com/dicodingacademy/a565-webtools-labs/099-shared-files/proyek-awal/DATA.json"
       );
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-      const data = await response.json();
       console.log(data);
       this.renderData(data.listStory);
     } catch (error) {

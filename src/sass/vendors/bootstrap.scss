@@ -35,14 +35,20 @@ $theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
 //
 // Navbar Color
 //
-$nav-pills-link-active-bg: rgba(color.$primary, 0.8);
+$navbar-light-color: rgba(color.$secondary, 0.9);
+$navbar-light-hover-color: rgba(color.$primary, 0.7);
+$navbar-light-active-color: rgba(color.$primary-light, 0.9);
+$navbar-toggler-icon-color: color.$secondary;
 $nav-link-color: rgba(200, 200, 200, 1);
 $nav-link-hover-color: rgba(color.$primary, 1);
+
+.navbar-nav .nav-link.active {
+  border-bottom: 2px solid color.$primary-light;
+}
 
 //
 // Border
 //
-
 $border-radius-pill: 5rem;
 
 @import "~bootstrap/scss/maps";
