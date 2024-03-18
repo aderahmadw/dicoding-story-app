@@ -32,6 +32,8 @@ module.exports = merge(config, {
       rewrites: [
         { from: /^\/$/, to: "/index.html" },
         { from: /^\/dashboard/, to: "/dashboard.html" },
+        { from: /^\/about/, to: "/about.html" },
+        { from: /^\/explore/, to: "/explore.html" },
       ],
     },
   },

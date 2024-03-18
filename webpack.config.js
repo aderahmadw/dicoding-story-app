@@ -56,6 +56,18 @@ module.exports = {
       ...htmlWebpackPluginConfig,
       chunks: ["app"],
     }),
+    new HtmlWebpackPlugin({
+      filename: "about.html",
+      template: path.resolve(__dirname, "./src/views/pages/about.html"),
+      ...htmlWebpackPluginConfig,
+      chunks: ["app"],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "explore.html",
+      template: path.resolve(__dirname, "./src/views/pages/explore.html"),
+      ...htmlWebpackPluginConfig,
+      chunks: ["app"],
+    }),
     new CopyWebpackPlugin({
       patterns: [
         {

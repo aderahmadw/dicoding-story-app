@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
 <script defer src="app.bundle.js"></script></head>
 
 <body>
-  <main class="position-relative">
-    <header class="container position-relative p-0">
+    <main class="position-relative">
+        <header class="container position-relative p-0">
     <nav id="navbar" class="navbar navbar-expand-lg position-fixed px-3 w-100">
         <div class="container border border-light rounded-5 p-3 bg-black bg-gradient">
             <a class="navbar-brand" href="/"><span class="fs-4 fw-bold text-white">
@@ -46,50 +46,89 @@
     });
 
 </script>
-      <section id="hero" class="position-relative">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col pt-5 d-flex align-items-center justify-content-center">
-              <div class="px-4 py-5 my-5 text-center">
-                <img class="d-block mx-auto mb-4" src="/img/logo.png" alt="" width="auto" height="200">
-                <h1 class="display-4 fw-bold">Welcome to Storyy App 🌟</h1>
-                <div class="col-lg-6 mx-auto">
-                  <p class="lead mb-4">Explore captivating adventures and heartfelt tales, immersing yourself in the
-                    boundless magic of storytelling.
-                  </p>
-                  <div class="d-flex gap-2 justify-content-center">
-                    <a href="/explore">
-                      <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Explore</button>
-                    </a>
-                    <a href="/about">
-                      <button type="button" class="btn btn-outline-light btn-lg px-4">Learn More</button>
-                    </a>
-                  </div>
+            <section id="hero" class="position-relative pt-5">
+                <div class="container">
+                    <div class="row pt-5 justify-content-center">
+                        <div class="col-12 d-flex align-items-center justify-content-center">
+                            <div class="py-1 pt-5 my-1 mt-5 py-lg-5 my-lg-5 text-center">
+                                <h1 class="display-4 fw-bold">Explore infinite stories</h1>
+                                <div class="col">
+                                    <p class="lead mb-4">Dive into an endless library of interactive stories on Explore!
+                                        Here, you hold the power to shape every twist and turn. <br> Choose your path,
+                                        uncover hidden secrets, and experience countless realities all within the tap of
+                                        a finger. Let your imagination run wild and explore the infinite possibilities
+                                        that await!
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div id="carouselExample" class="carousel slide">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="..." class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="..." class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="..." class="d-block w-100" alt="...">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExample" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExample" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="showcase" class="container rounded-pill bg-dark bg-gradient bg-opacity-10 mb-5">
-        <div class="row justify-content-center">
-          <div class="col d-flex align-items-center justify-content-center">
-            <div class="px-4 py-5 my-5 text-center">
-              <h2 class="display-4 fw-bold mb-5">Explore our collection</h2>
-              <div
-                class="stories-wrapper col-12 col-lg-10 flex-wrap flex-lg-nowrap mx-auto d-flex justify-content-between mb-5">
-                <!-- iterate item here -->
-              </div>
-              <div class="d-flex gap-2 justify-content-center">
-                <a href="/explore">
-                  <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Explore More Stories! 🌟</button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            </section>
+            <section id="galer" class="position-relative">
+                <div class="container border-top">
+                    <div class="row pt-5 justify-content-center">
+                        <h2 class="display-4 fw-bold">Meet Us</h2>
+                        <div class="col-12 d-flex align-items-center justify-content-center">
+                            <div class="my-5">
+                                <div class="col">
+                                    <p class="lead mb-4">At Storyy, we are a diverse team of creative minds driven by a
+                                        shared vision to elevate storytelling. Our dedicated team members bring a wealth
+                                        of experience and expertise, united in our mission to craft compelling
+                                        narratives and foster meaningful connections. Get to know the faces behind
+                                        Storyy and discover the passion and dedication that fuels our work.
+                                    </p>
+                                    <div
+                                        class="col-12 d-flex flex-shrink flex-wrap align-items-center justify-content-evenly">
+                                        <div class="p-1 mb-3">
+                                            <img src="https://source.unsplash.com/1200x700/?office" alt=""
+                                                class="rounded-5 shadow-sm" width="500" height="auto">
+                                        </div>
+                                        <div class="p-1 mb-3">
+                                            <img src="https://source.unsplash.com/1200x700/?work" alt=""
+                                                class="rounded-5 shadow-sm" width="500" height="auto">
+                                        </div>
+                                        <div class="p-1 mb-3">
+                                            <img src="https://source.unsplash.com/1200x700/?employee" alt=""
+                                                class="rounded-5 shadow-sm" width="500" height="auto">
+                                        </div>
+                                        <div class="p-1 mb-3">
+                                            <img src="https://source.unsplash.com/1200x700/?meeting" alt=""
+                                                class="rounded-5 shadow-sm" width="500" height="auto">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="bootstrap" viewBox="0 0 118 94">
         <title>Bootstrap</title>
         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -134,7 +173,7 @@
                 </svg></a></li>
     </ul>
 </footer>
-  </main>
+    </main>
 </body>
 
 </html>

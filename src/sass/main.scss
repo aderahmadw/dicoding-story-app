@@ -50,6 +50,28 @@ header {
     position: relative;
     z-index: 1;
   }
+  .about-ceo-wrapper {
+    @include mixin.gradient-overlay;
+    .about-ceo {
+      object-fit: cover;
+      object-position: top;
+      max-width: 500px;
+    }
+    h3 {
+      position: relative;
+      z-index: 10;
+      margin-top: -100px;
+    }
+  }
+}
+
+#galery {
+  div {
+    img {
+      max-width: 420px;
+      width: 100%;
+    }
+  }
 }
 
 .story-item {
